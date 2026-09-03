@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Special Surprise ❤️</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         BACKGROUND MUSIC
+    ====================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="leberch-happy-birthday-581704.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support the audio element.
+
+    </audio>
+
+
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="stars"></div>
+
+
+
+    <!-- =====================================
+         FLOATING HEARTS
+    ====================================== -->
+
+    <div class="hearts">
+
+        <span>❤️</span>
+
+        <span>💕</span>
+
+        <span>💖</span>
+
+        <span>❤️</span>
+
+        <span>💗</span>
+
+        <span>💞</span>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MAIN HERO SECTION
+    ====================================== -->
+
+    <main class="hero">
+
+
+        <!-- Secret Badge -->
+
+        <div class="secret-badge">
+
+            ✨ A SECRET EXPERIENCE ✨
+
+        </div>
+
+
+
+        <!-- Main Content -->
+
+        <section class="content">
+
+
+            <p class="small-text">
+
+                Hey...
+
+            </p>
+
+
+
+            <h1 class="main-title">
+
+                I Have Something
+
+                <span>
+                    Special
+                </span>
+
+                For You My Love
+
+            </h1>
+
+
+
+            <p class="subtitle">
+
+                This is not just a website...
+
+                <br>
+
+                It's a little journey made especially for you.
+
+            </p>
+
+
+
+            <!-- Ready Message -->
+
+            <div class="ready-message">
+
+                <div class="pulse-dot"></div>
+
+                <span>
+                    Your surprise is waiting...
+                </span>
+
+            </div>
+
+
+
+            <!-- Start Button -->
+
+            <button
+                id="startBtn"
+                class="start-btn"
+                type="button"
+            >
+
+                <span class="btn-text">
+
+                    Enter The Surprise
+
+                </span>
+
+
+                <span class="btn-icon">
+
+                    ✨
+
+                </span>
+
+            </button>
+
+
+
+            <p class="hint">
+
+                Psst... you might want to wear headphones 🎧
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- Bottom Message -->
+
+        <div class="bottom-message">
+
+           A small surprise, made with lots of love 🎀
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         TRANSITION SCREEN
+    ====================================== -->
+
+    <div
+        id="transitionScreen"
+        class="transition-screen"
+    >
+
+        <div class="transition-content">
+
+
+            <div class="loader-heart">
+
+                ❤️
+
+            </div>
+
+
+            <h2>
+
+                Preparing your surprise...
+
+            </h2>
+
+
+            <p>
+
+                Just a few more seconds ✨
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MUSIC + PAGE SCRIPT
+    ====================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =====================================
+         FIRST PAGE MUSIC START
+    ====================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+
+                const music =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+
+                const startButton =
+                    document.getElementById(
+                        "startBtn"
+                    );
+
+
+                const transitionScreen =
+                    document.getElementById(
+                        "transitionScreen"
+                    );
+
+
+                /*
+                =====================================
+                MUSIC SETTINGS
+                =====================================
+                */
+
+                const MUSIC_TIME_KEY =
+                    "birthdayMusicTime";
+
+
+
+                /*
+                =====================================
+                START MUSIC
+
+                Music starts ONLY when the user
+                clicks "Enter The Surprise".
+                =====================================
+                */
+
+                if (startButton && music) {
+
+                    startButton.addEventListener(
+                        "click",
+                        async () => {
+
+
+                            /*
+                            Start from saved position
+                            only if one exists.
+                            */
+
+                            const savedTime =
+                                parseFloat(
+                                    localStorage.getItem(
+                                        MUSIC_TIME_KEY
+                                    )
+                                );
+
+
+                            if (
+                                Number.isFinite(
+                                    savedTime
+                                ) &&
+                                savedTime >= 0
+                            ) {
+
+                                music.currentTime =
+                                    savedTime;
+
+                            }
+
+
+                            /*
+                            Start music.
+                            */
+
+                            try {
+
+                                await music.play();
+
+                            }
+                            catch (error) {
+
+                                console.log(
+                                    "Music could not start:",
+                                    error
+                                );
+
+                            }
+
+
+                            /*
+                            Save current position
+                            before moving to next page.
+                            */
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+
+                            /*
+                            Show transition screen.
+                            */
+
+                            if (
+                                transitionScreen
+                            ) {
+
+                                transitionScreen.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+
+                            /*
+                            Give the transition animation
+                            a little time, then continue.
+                            */
+
+                            setTimeout(
+                                () => {
+
+                                    localStorage.setItem(
+                                        MUSIC_TIME_KEY,
+                                        music.currentTime
+                                    );
+
+
+                                    window.location.href =
+                                        "secret.html";
+
+                                },
+                                900
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /*
+                =====================================
+                KEEP SAVING MUSIC POSITION
+                =====================================
+                */
+
+                if (music) {
+
+                    music.addEventListener(
+                        "timeupdate",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+
+                    /*
+                    Also save when leaving page.
+                    */
+
+                    window.addEventListener(
+                        "beforeunload",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+                }
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

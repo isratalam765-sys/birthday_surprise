@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Gift For You 🎁</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         BACKGROUND MUSIC
+    ====================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="leberch-happy-birthday-581704.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support the audio element.
+
+    </audio>
+
+
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="stars"></div>
+
+
+
+    <!-- =====================================
+         FLOATING HEARTS
+    ====================================== -->
+
+    <div class="hearts">
+
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+        <span>💞</span>
+
+    </div>
+
+
+
+    <!-- =====================================
+         GIFT PAGE
+    ====================================== -->
+
+    <main class="gift-page">
+
+
+        <div class="gift-content">
+
+
+            <p class="small-text">
+<p>
+    You made it this far... 💗
+</p>
+
+<h1>
+    A Little Surprise
+    <span>
+        Made With Love For You 🎁
+    </span>
+</h1>
+
+<p class="gift-description">
+    We've already shared
+    <br>
+    so many beautiful moments together.
+    <br><br>
+    And there are still so many things
+    <br>
+    I want to say,
+    <br>
+    and so many memories I want to make with you. ❤️
+    <br><br>
+    <strong>So I made this little surprise, just for you. ✨</strong>
+</p>
+
+
+
+
+            <!-- =================================
+                 GIFT AREA
+            ================================== -->
+
+            <div class="gift-area">
+
+
+                <div
+                    id="giftBox"
+                    class="gift-box"
+                >
+
+
+                    <!-- Gift body -->
+
+                    <div class="gift-body">
+
+
+                        <!-- Ribbon -->
+
+                        <div class="gift-ribbon"></div>
+
+
+                    </div>
+
+
+
+                    <!-- Gift lid -->
+
+                    <div class="gift-lid">
+
+
+                        <div class="gift-ribbon"></div>
+
+
+                    </div>
+
+
+
+                    <!-- Bow -->
+
+                    <div class="gift-bow">
+
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <p class="gift-hint">
+
+                ✨ Click the gift to open it ✨
+
+            </p>
+
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         GIFT REVEAL
+    ====================================== -->
+
+    <div
+        id="giftReveal"
+        class="gift-reveal"
+    >
+
+
+        <div class="reveal-content">
+
+
+            <div class="reveal-icon">
+
+                💖
+
+            </div>
+
+
+
+            <p class="small-text">
+
+                A little something, from my heart...
+
+            </p>
+
+
+
+            <h2>
+
+                Made With Love
+
+                <span>
+                    Just For You ❤️
+                </span>
+
+            </h2>
+
+
+
+            <p>
+
+                For all the little moments
+                that made us who we are,
+                and all the beautiful moments
+                still waiting for us.
+
+            </p>
+
+
+
+            <button
+                id="continueGift"
+                type="button"
+            >
+
+                Continue the journey
+                ✨
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+
+                /* =====================================
+                   MUSIC CONTINUITY
+                ===================================== */
+
+                const music =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+
+                const MUSIC_TIME_KEY =
+                    "birthdayMusicTime";
+
+
+                /*
+                Restore the exact position
+                saved by the previous page.
+                */
+
+                const savedTime =
+                    parseFloat(
+                        localStorage.getItem(
+                            MUSIC_TIME_KEY
+                        )
+                    );
+
+
+                if (
+                    music &&
+                    Number.isFinite(savedTime) &&
+                    savedTime >= 0
+                ) {
+
+                    music.addEventListener(
+                        "loadedmetadata",
+                        () => {
+
+                            try {
+
+                                music.currentTime =
+                                    savedTime;
+
+                            }
+                            catch (error) {
+
+                                console.log(
+                                    "Could not restore music position."
+                                );
+
+                            }
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+
+
+                /*
+                Continue music.
+                */
+
+                if (music) {
+
+
+                    music.play()
+                        .catch(
+                            () => {}
+                        );
+
+
+
+                    /*
+                    Browser autoplay protection:
+                    first interaction resumes music.
+                    */
+
+                    const resumeMusic =
+                        () => {
+
+                            if (
+                                music.paused
+                            ) {
+
+                                music.play()
+                                    .catch(
+                                        () => {}
+                                    );
+
+                            }
+
+                        };
+
+
+                    document.addEventListener(
+                        "click",
+                        resumeMusic,
+                        {
+                            once: true
+                        }
+                    );
+
+
+                    document.addEventListener(
+                        "touchstart",
+                        resumeMusic,
+                        {
+                            once: true
+                        }
+                    );
+
+
+
+                    /*
+                    Continuously save
+                    current music position.
+                    */
+
+                    music.addEventListener(
+                        "timeupdate",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+
+
+                    /*
+                    Save before leaving page.
+                    */
+
+                    window.addEventListener(
+                        "beforeunload",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =====================================
+                   GIFT ELEMENTS
+                ===================================== */
+
+                const giftBox =
+                    document.getElementById(
+                        "giftBox"
+                    );
+
+
+                const giftReveal =
+                    document.getElementById(
+                        "giftReveal"
+                    );
+
+
+                const continueGift =
+                    document.getElementById(
+                        "continueGift"
+                    );
+
+
+
+                /* =====================================
+                   OPEN GIFT
+                ===================================== */
+
+                giftBox.addEventListener(
+                    "click",
+                    () => {
+
+
+                        /*
+                        Prevent opening repeatedly.
+                        */
+
+                        if (
+                            giftBox.classList.contains(
+                                "open"
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        giftBox.classList.add(
+                            "open"
+                        );
+
+
+                        /*
+                        Wait for the lid animation
+                        before showing the reveal.
+                        */
+
+                        setTimeout(
+                            () => {
+
+                                giftReveal.classList.add(
+                                    "active"
+                                );
+
+                            },
+                            850
+                        );
+
+
+                    }
+                );
+
+
+
+                /* =====================================
+                   CONTINUE
+                ===================================== */
+
+                continueGift.addEventListener(
+                    "click",
+                    () => {
+
+
+                        /*
+                        Save exact music position
+                        before moving to next page.
+                        */
+
+                        if (music) {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+
+
+                        window.location.href =
+                            "memories.html";
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

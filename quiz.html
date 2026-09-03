@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Surprise ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =====================================
+           INTERACTIVE SURPRISE PAGE
+        ====================================== */
+
+        .surprise-page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 40px 18px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .surprise-content {
+
+            width: min(680px, 100%);
+
+            text-align: center;
+
+        }
+
+
+        .surprise-step {
+
+            display: none;
+
+            animation: surpriseAppear 0.7s ease;
+
+        }
+
+
+        .surprise-step.active {
+
+            display: block;
+
+        }
+
+
+        @keyframes surpriseAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(18px)
+                    scale(0.97);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        .surprise-badge {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 8px 18px;
+
+            border:
+                1px solid
+                rgba(255, 182, 217, 0.35);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 255, 255, 0.07);
+
+            color: #ffd6e7;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .surprise-title {
+
+            margin: 0;
+
+            color: white;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size:
+                clamp(42px, 8vw, 68px);
+
+            line-height: 1.05;
+
+        }
+
+
+        .surprise-title span {
+
+            color: #ff9fca;
+
+        }
+
+
+        .surprise-text {
+
+            margin:
+                18px auto 0;
+
+            max-width: 540px;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================
+           CANDLE
+        ====================================== */
+
+        .candle-scene {
+
+            margin:
+                35px auto 25px;
+
+            position: relative;
+
+            width: 220px;
+
+            height: 230px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-end;
+
+        }
+
+
+        .cake {
+
+            position: relative;
+
+            width: 180px;
+
+            height: 95px;
+
+            border-radius:
+                18px 18px 25px 25px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffd7e8,
+                    #ff9fc7
+                );
+
+            box-shadow:
+                0 18px 45px
+                rgba(255, 79, 154, 0.22),
+
+                inset 0 -12px 0
+                rgba(255, 255, 255, 0.15);
+
+        }
+
+
+        .cake::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 22px;
+
+            width: 100%;
+
+            height: 12px;
+
+            background:
+                rgba(255,255,255,0.55);
+
+            border-radius: 50%;
+
+        }
+
+
+        .cake::after {
+
+            content: "♡  ♡  ♡";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 17px;
+
+            color:
+                rgba(255,255,255,0.85);
+
+            font-size: 17px;
+
+            letter-spacing: 10px;
+
+        }
+
+
+        .candle {
+
+            position: absolute;
+
+            bottom: 82px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 25px;
+
+            height: 75px;
+
+            border-radius:
+                8px 8px 4px 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff2f8,
+                    #ffb7d6,
+                    #fff2f8
+                );
+
+            box-shadow:
+                0 4px 15px
+                rgba(255,255,255,0.12);
+
+        }
+
+
+        .flame {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: -46px;
+
+            width: 25px;
+
+            height: 38px;
+
+            transform:
+                translateX(-50%)
+                rotate(45deg);
+
+            border-radius:
+                50% 50% 50% 8%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff8ad,
+                    #ff9c50
+                );
+
+            box-shadow:
+                0 0 25px
+                rgba(255, 181, 82, 0.7);
+
+            animation:
+                flameFlicker
+                0.75s
+                infinite
+                alternate
+                ease-in-out;
+
+        }
+
+
+        .flame::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 10px;
+
+            height: 17px;
+
+            left: 6px;
+
+            top: 7px;
+
+            border-radius:
+                50% 50% 50% 0;
+
+            background: #fffbe1;
+
+        }
+
+
+        .candle-blown .flame {
+
+            animation:
+                blowOut
+                0.55s
+                ease
+                forwards;
+
+        }
+
+
+        @keyframes flameFlicker {
+
+            from {
+
+                transform:
+                    translateX(-50%)
+                    rotate(43deg)
+                    scale(0.96);
+
+            }
+
+            to {
+
+                transform:
+                    translateX(-50%)
+                    rotate(48deg)
+                    scale(1.05);
+
+            }
+
+        }
+
+
+        @keyframes blowOut {
+
+            to {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    rotate(45deg)
+                    scale(0.2);
+
+            }
+
+        }
+
+
+        .smoke {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 7px;
+
+            width: 9px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border-left:
+                2px solid
+                rgba(255,255,255,0.4);
+
+            opacity: 0;
+
+            transform:
+                translateX(-50%);
+
+        }
+
+
+        .candle-blown .smoke {
+
+            animation:
+                smokeRise
+                1.3s
+                ease
+                forwards;
+
+        }
+
+
+        @keyframes smokeRise {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(12px);
+
+            }
+
+            35% {
+
+                opacity: 0.65;
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-25px)
+                    translateY(-35px)
+                    rotate(15deg);
+
+            }
+
+        }
+
+
+        /* =====================================
+           BUTTONS
+        ====================================== */
+
+        .surprise-btn {
+
+            margin-top: 24px;
+
+            padding:
+                14px 30px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8fc7,
+                    #ff4f9a
+                );
+
+            color: white;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 28px
+                rgba(255, 79, 154, 0.25);
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .surprise-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 14px 34px
+                rgba(255, 79, 154, 0.35);
+
+        }
+
+
+        /* =====================================
+           LETTER
+        ====================================== */
+
+        .letter-wrap {
+
+            margin:
+                30px auto;
+
+            perspective: 1000px;
+
+        }
+
+
+        .letter {
+
+            width:
+                min(520px, 94vw);
+
+            margin: 0 auto;
+
+            padding:
+                36px 30px;
+
+            position: relative;
+
+            border-radius: 5px;
+
+            background: #fff8f2;
+
+            color: #604652;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.25),
+
+                0 5px 15px
+                rgba(255, 105, 180, 0.15);
+
+            transform:
+                rotate(-1deg);
+
+            animation:
+                letterOpen
+                0.8s
+                ease;
+
+        }
+
+
+        .letter::before {
+
+            content: "💌";
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 30px;
+
+        }
+
+
+        .letter::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 10px;
+
+            border:
+                1px solid
+                rgba(180,120,140,0.2);
+
+            pointer-events: none;
+
+        }
+
+
+        @keyframes letterOpen {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    rotate(-5deg)
+                    translateY(25px)
+                    scale(0.92);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    rotate(-1deg)
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        .letter-label {
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0.65;
+
+        }
+
+
+        .letter-title {
+
+            margin:
+                12px 0 18px;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 38px;
+
+            color: #c85f8e;
+
+        }
+
+
+        .letter-body {
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 23px;
+
+            line-height: 1.65;
+
+            white-space: pre-line;
+
+        }
+
+
+        .letter-sign {
+
+            margin-top: 22px;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 25px;
+
+            color: #c85f8e;
+
+        }
+
+
+        /* =====================================
+           FINAL QUESTION
+        ====================================== */
+
+        .final-question-card {
+
+            width:
+                min(560px, 94vw);
+
+            margin: 30px auto;
+
+            padding:
+                38px 25px;
+
+            border-radius: 28px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,182,217,0.22);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.18);
+
+        }
+
+
+        .final-emoji {
+
+            font-size: 55px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .final-question {
+
+            margin: 0;
+
+            color: white;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size:
+                clamp(38px, 7vw, 58px);
+
+        }
+
+
+        .final-subtext {
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 13px;
+
+            margin-top: 12px;
+
+        }
+
+
+        .choice-row {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 16px;
+
+            margin-top: 28px;
+
+            position: relative;
+
+            min-height: 58px;
+
+        }
+
+
+        .choice-btn {
+
+            min-width: 130px;
+
+            padding:
+                14px 24px;
+
+            border-radius: 30px;
+
+            border: none;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .yes-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8fc7,
+                    #ff4f9a
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px
+                rgba(255,79,154,0.25);
+
+        }
+
+
+        .yes-btn:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.03);
+
+        }
+
+
+        .no-btn {
+
+            background:
+                rgba(255,255,255,0.10);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            color: white;
+
+        }
+
+
+        .no-btn.playful {
+
+            position: absolute;
+
+        }
+
+
+        .no-message {
+
+            min-height: 30px;
+
+            margin-top: 18px;
+
+            color: #ffb4d9;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================
+           YES SCREEN
+        ====================================== */
+
+        .yes-heart {
+
+            font-size: 85px;
+
+            animation:
+                heartPop
+                0.9s
+                ease
+                infinite
+                alternate;
+
+        }
+
+
+        @keyframes heartPop {
+
+            from {
+
+                transform:
+                    scale(0.95);
+
+            }
+
+            to {
+
+                transform:
+                    scale(1.08);
+
+            }
+
+        }
+
+
+        /* =====================================
+           HEART CONFETTI
+        ====================================== */
+
+        .confetti-heart {
+
+            position: fixed;
+
+            pointer-events: none;
+
+            z-index: 20;
+
+            animation:
+                confettiFall
+                2.4s
+                ease-out
+                forwards;
+
+        }
+
+
+        @keyframes confettiFall {
+
+            0% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(-30px)
+                    rotate(0deg)
+                    scale(1);
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(100vh)
+                    rotate(500deg)
+                    scale(0.7);
+
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .letter {
+
+                padding:
+                    30px 22px;
+
+            }
+
+
+            .letter-body {
+
+                font-size: 21px;
+
+            }
+
+
+            .choice-row {
+
+                gap: 10px;
+
+            }
+
+
+            .choice-btn {
+
+                min-width: 115px;
+
+                padding:
+                    13px 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         BACKGROUND MUSIC
+    ====================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="leberch-happy-birthday-581704.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support the audio element.
+
+    </audio>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="stars"></div>
+
+
+    <div class="hearts">
+
+        <span>❤️</span>
+
+        <span>💕</span>
+
+        <span>💖</span>
+
+        <span>💗</span>
+
+        <span>💞</span>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="surprise-page">
+
+
+        <div class="surprise-content">
+
+
+            <!-- =====================================
+                 STEP 1 — CANDLE
+            ====================================== -->
+
+            <section
+                id="candleStep"
+                class="surprise-step active"
+            >
+
+
+                <div class="surprise-badge">
+
+                    ✨ Candle For You
+
+                </div>
+
+
+                <h1 class="surprise-title">
+
+                    Make A Little
+                    <span>Wish</span> 💖
+
+                </h1>
+
+
+                <p class="surprise-text">
+
+                   
+
+                    <br>
+
+                    close your eyes, make a wish,
+                    and blow the candle. 🕯️
+
+                </p>
+
+
+                <div
+                    id="candleScene"
+                    class="candle-scene"
+                >
+
+
+                    <div class="candle">
+
+                        <div class="flame"></div>
+
+                        <div class="smoke"></div>
+
+                    </div>
+
+
+                    <div class="cake"></div>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="blowBtn"
+                    class="surprise-btn"
+                >
+
+                    Blow the Candle 💨
+
+                </button>
+
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 2 — LETTER
+            ====================================== -->
+
+            <section
+                id="letterStep"
+                class="surprise-step"
+            >
+
+
+                <div class="surprise-badge">
+
+                    💌 A Little Letter
+
+                </div>
+
+
+                <h1 class="surprise-title">
+
+                    A Wish Letter
+                    <span>For You</span> ✨
+
+                </h1>
+
+
+                <div class="letter-wrap">
+
+
+                    <article class="letter">
+
+
+                        <div class="letter-label">
+
+                            A little something from my heart
+
+                        </div>
+
+
+                        <h2 class="letter-title">
+
+                            My Wish For You My Love💗
+
+                        </h2>
+
+
+                        <div class="letter-body">
+                            ILOVEYOU BBY..Take lots of love,kisses and hugs.I hope every little wish
+in your heart finds its way to you.
+
+I hope you keep smiling,
+keep dreaming,
+and keep finding beautiful reasons
+to be happy.
+
+And more than anything...
+
+I hope we keep making
+little memories together —
+one beautiful chapter at a time. ❤️</div>
+
+
+                        <div class="letter-sign">
+
+                            With lots of love, ❤️
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="letterContinue"
+                    class="surprise-btn"
+                >
+
+                    There's One Last Thing... ✨
+
+                </button>
+
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 3 — FINAL QUESTION
+            ====================================== -->
+
+            <section
+                id="questionStep"
+                class="surprise-step"
+            >
+
+
+                <div class="surprise-badge">
+
+                    🥺 One Last Question
+
+                </div>
+
+
+                <div class="final-question-card">
+
+
+                    <div class="final-emoji">
+
+                        🥺❤️
+
+                    </div>
+
+
+                    <h1 class="final-question">
+
+YouLoveMe?
+                    </h1>
+
+
+                    <p class="final-subtext">
+
+                        Think carefully...
+                        there's only one correct answer. 😭💕
+
+                    </p>
+
+
+                    <div
+                        class="choice-row"
+                        id="choiceRow"
+                    >
+
+
+                        <button
+                            type="button"
+                            id="yesBtn"
+                            class="choice-btn yes-btn"
+                        >
+
+                            YES ❤️
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="noBtn"
+                            class="choice-btn no-btn"
+                        >
+
+                            NO 😭
+
+                        </button>
+
+
+                    </div>
+
+
+                    <p
+                        id="noMessage"
+                        class="no-message"
+                    ></p>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 4 — YES
+            ====================================== -->
+
+            <section
+                id="yesStep"
+                class="surprise-step"
+            >
+
+
+                <div class="yes-heart">
+
+                    💖
+
+                </div>
+
+
+                <div class="surprise-badge">
+
+                    🥹 You Said Yes
+
+                </div>
+
+
+                <h1 class="surprise-title">
+
+                    I Knew It!
+                    <span>❤️</span>
+
+                </h1>
+
+
+                <p class="surprise-text">
+
+                    You just made me the happiest person. 🥹
+
+                    <br>
+
+                    And now there's one last little surprise
+                    waiting for you...
+
+                </p>
+
+
+                <button
+                    type="button"
+                    id="continueBtn"
+                    class="surprise-btn"
+                >
+
+                    Continue ✨
+
+                </button>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+
+                /* =====================================
+                   BACKGROUND MUSIC
+                ====================================== */
+
+                const bgMusic =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+
+                function saveMusicTime() {
+
+                    if (
+                        bgMusic &&
+                        !isNaN(
+                            bgMusic.currentTime
+                        )
+                    ) {
+
+                        localStorage.setItem(
+                            "musicTime",
+                            bgMusic.currentTime
+                        );
+
+                    }
+
+                }
+
+
+                function resumeMusic() {
+
+                    if (!bgMusic) return;
+
+
+                    if (
+                        localStorage.getItem(
+                            "musicStarted"
+                        ) !== "true"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const savedTime =
+                        parseFloat(
+                            localStorage.getItem(
+                                "musicTime"
+                            )
+                        );
+
+
+                    const restore = () => {
+
+
+                        if (
+                            !isNaN(savedTime) &&
+                            savedTime >= 0
+                        ) {
+
+                            try {
+
+                                if (
+                                    savedTime <
+                                    bgMusic.duration ||
+                                    !isFinite(
+                                        bgMusic.duration
+                                    )
+                                ) {
+
+                                    bgMusic.currentTime =
+                                        savedTime;
+
+                                }
+
+                            }
+
+                            catch (error) {}
+
+                        }
+
+
+                        bgMusic.volume = 0.7;
+
+
+                        const playPromise =
+                            bgMusic.play();
+
+
+                        if (
+                            playPromise !==
+                            undefined
+                        ) {
+
+                            playPromise.catch(
+                                () => {}
+                            );
+
+                        }
+
+                    };
+
+
+                    if (
+                        bgMusic.readyState >= 1
+                    ) {
+
+                        restore();
+
+                    }
+
+                    else {
+
+                        bgMusic.addEventListener(
+                            "loadedmetadata",
+                            restore,
+                            {
+                                once: true
+                            }
+                        );
+
+                    }
+
+                }
+
+
+                if (bgMusic) {
+
+
+                    bgMusic.addEventListener(
+                        "timeupdate",
+                        saveMusicTime
+                    );
+
+
+                    window.addEventListener(
+                        "beforeunload",
+                        saveMusicTime
+                    );
+
+
+                    resumeMusic();
+
+
+                    const resumeOnInteraction =
+                        () => {
+
+
+                            if (
+                                localStorage.getItem(
+                                    "musicStarted"
+                                ) === "true" &&
+                                bgMusic.paused
+                            ) {
+
+                                resumeMusic();
+
+                            }
+
+                        };
+
+
+                    document.addEventListener(
+                        "click",
+                        resumeOnInteraction,
+                        {
+                            once: true
+                        }
+                    );
+
+
+                    document.addEventListener(
+                        "keydown",
+                        resumeOnInteraction,
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+
+                /* =====================================
+                   STEPS
+                ====================================== */
+
+                const candleStep =
+                    document.getElementById(
+                        "candleStep"
+                    );
+
+
+                const letterStep =
+                    document.getElementById(
+                        "letterStep"
+                    );
+
+
+                const questionStep =
+                    document.getElementById(
+                        "questionStep"
+                    );
+
+
+                const yesStep =
+                    document.getElementById(
+                        "yesStep"
+                    );
+
+
+                function showStep(step) {
+
+
+                    [
+                        candleStep,
+                        letterStep,
+                        questionStep,
+                        yesStep
+                    ].forEach(
+                        section => {
+
+                            section.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    step.classList.add(
+                        "active"
+                    );
+
+
+                    window.scrollTo({
+
+                        top: 0,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+
+
+                /* =====================================
+                   CANDLE
+                ====================================== */
+
+                const blowBtn =
+                    document.getElementById(
+                        "blowBtn"
+                    );
+
+
+                const candleScene =
+                    document.getElementById(
+                        "candleScene"
+                    );
+
+
+                let candleBlown = false;
+
+
+                blowBtn.addEventListener(
+                    "click",
+                    () => {
+
+
+                        if (candleBlown) return;
+
+
+                        candleBlown = true;
+
+
+                        candleScene.classList.add(
+                            "candle-blown"
+                        );
+
+
+                        blowBtn.disabled =
+                            true;
+
+
+                        blowBtn.textContent =
+                            "Wish made... ✨";
+
+
+                        setTimeout(
+                            () => {
+
+                                showStep(
+                                    letterStep
+                                );
+
+                            },
+                            1300
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   LETTER
+                ====================================== */
+
+                const letterContinue =
+                    document.getElementById(
+                        "letterContinue"
+                    );
+
+
+                letterContinue.addEventListener(
+                    "click",
+                    () => {
+
+                        showStep(
+                            questionStep
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   FINAL QUESTION
+                ====================================== */
+
+                const yesBtn =
+                    document.getElementById(
+                        "yesBtn"
+                    );
+
+
+                const noBtn =
+                    document.getElementById(
+                        "noBtn"
+                    );
+
+
+                const noMessage =
+                    document.getElementById(
+                        "noMessage"
+                    );
+
+
+                const choiceRow =
+                    document.getElementById(
+                        "choiceRow"
+                    );
+
+
+                let noCount = 0;
+
+
+                const noMessages = [
+
+                    "Are you sure? 🥺",
+
+                    "Hmm... I don't think that's the right answer. 😭",
+
+                    "Nice try... but NO is getting shy now. 🥹",
+
+                    "NO is currently unavailable. 💀❤️",
+
+                    "Please choose the correct answer. 😭💕",
+
+                    "You really thought I'd let you say no? 😂❤️"
+
+                ];
+
+
+                noBtn.addEventListener(
+                    "click",
+                    () => {
+
+
+                        noCount++;
+
+
+                        noMessage.textContent =
+                            noMessages[
+                                Math.min(
+                                    noCount - 1,
+                                    noMessages.length - 1
+                                )
+                            ];
+
+
+                        noBtn.classList.add(
+                            "playful"
+                        );
+
+
+                        const maxX =
+                            Math.max(
+                                10,
+                                choiceRow.clientWidth -
+                                noBtn.offsetWidth -
+                                10
+                            );
+
+
+                        const randomX =
+                            Math.random() *
+                            maxX;
+
+
+                        const randomY =
+                            (
+                                Math.random() *
+                                55
+                            ) - 15;
+
+
+                        noBtn.style.left =
+                            `${randomX}px`;
+
+
+                        noBtn.style.top =
+                            `${randomY}px`;
+
+
+                        noBtn.animate(
+
+                            [
+
+                                {
+                                    transform:
+                                        "scale(1)"
+                                },
+
+                                {
+                                    transform:
+                                        "scale(0.9) rotate(-4deg)"
+                                },
+
+                                {
+                                    transform:
+                                        "scale(1)"
+                                }
+
+                            ],
+
+                            {
+
+                                duration: 350,
+
+                                easing:
+                                    "ease-out"
+
+                            }
+
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   YES
+                ====================================== */
+
+                yesBtn.addEventListener(
+                    "click",
+                    () => {
+
+
+                        noMessage.textContent =
+                            "Best answer ever. 🥹❤️";
+
+
+                        createHeartConfetti();
+
+
+                        setTimeout(
+                            () => {
+
+                                showStep(
+                                    yesStep
+                                );
+
+                            },
+                            650
+                        );
+
+                    }
+                );
+
+
+                /* =====================================
+                   HEART CONFETTI
+                ====================================== */
+
+                function createHeartConfetti() {
+
+
+                    const hearts = [
+
+                        "❤️",
+
+                        "💕",
+
+                        "💖",
+
+                        "💗",
+
+                        "💞",
+
+                        "✨"
+
+                    ];
+
+
+                    for (
+                        let i = 0;
+                        i < 28;
+                        i++
+                    ) {
+
+
+                        const heart =
+                            document.createElement(
+                                "span"
+                            );
+
+
+                        heart.className =
+                            "confetti-heart";
+
+
+                        heart.textContent =
+                            hearts[
+                                Math.floor(
+                                    Math.random() *
+                                    hearts.length
+                                )
+                            ];
+
+
+                        heart.style.left =
+                            `${Math.random() * 100}vw`;
+
+
+                        heart.style.top =
+                            `${-10 - Math.random() * 20}px`;
+
+
+                        heart.style.fontSize =
+                            `${16 + Math.random() * 18}px`;
+
+
+                        heart.style.animationDelay =
+                            `${Math.random() * 0.5}s`;
+
+
+                        document.body.appendChild(
+                            heart
+                        );
+
+
+                        setTimeout(
+                            () => {
+
+                                heart.remove();
+
+                            },
+                            3000
+                        );
+
+                    }
+
+                }
+
+
+                /* =====================================
+                   CONTINUE TO GIFT
+                ====================================== */
+
+                const continueBtn =
+                    document.getElementById(
+                        "continueBtn"
+                    );
+
+
+                continueBtn.addEventListener(
+                    "click",
+                    () => {
+
+
+                        saveMusicTime();
+
+
+                        localStorage.setItem(
+                            "musicStarted",
+                            "true"
+                        );
+
+
+                        window.location.href =
+                            "final.html";
+
+                    }
+                );
+
+
+                /* =====================================
+                   FLOATING HEART POSITIONS
+                ====================================== */
+
+                const floatingHearts =
+                    document.querySelectorAll(
+                        ".hearts span"
+                    );
+
+
+                floatingHearts.forEach(
+                    heart => {
+
+                        heart.style.left =
+                            Math.random() *
+                            95 +
+                            "%";
+
+                    }
+                );
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>

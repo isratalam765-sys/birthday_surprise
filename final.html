@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Our Final Chapter ❤️</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <style>
+
+        /* =====================================
+           FINAL PAGE
+        ====================================== */
+
+        .final-page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 30px 20px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =====================================
+           MAIN CARD
+        ====================================== */
+
+        .final-card {
+
+            width: 100%;
+
+            max-width: 720px;
+
+            padding: 50px 35px;
+
+            text-align: center;
+
+            border-radius: 32px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.18);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 25px 80px
+                rgba(0, 0, 0, 0.35);
+
+            animation:
+                finalAppear 1s ease;
+
+        }
+
+
+        @keyframes finalAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(0.95);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =====================================
+           BADGE
+        ====================================== */
+
+        .final-badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            margin-bottom: 22px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 105, 180, 0.15);
+
+            border:
+                1px solid
+                rgba(255, 182, 193, 0.35);
+
+            color: #ffd6e7;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================
+           HEART
+        ====================================== */
+
+        .final-heart {
+
+            font-size: 75px;
+
+            margin-bottom: 15px;
+
+            animation:
+                finalHeartBeat 1.6s infinite;
+
+        }
+
+
+        @keyframes finalHeartBeat {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.12);
+
+            }
+
+        }
+
+
+        /* =====================================
+           TEXT
+        ====================================== */
+
+        .final-small {
+
+            margin-bottom: 10px;
+
+            color:
+                rgba(255, 255, 255, 0.7);
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .final-card h1 {
+
+            margin: 0;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size:
+                clamp(48px, 8vw, 75px);
+
+            line-height: 1.05;
+
+            color: white;
+
+        }
+
+
+        .final-card h1 span {
+
+            display: block;
+
+            color: #ffb6d9;
+
+        }
+
+
+        /* =====================================
+           MESSAGE
+        ====================================== */
+
+        .final-message {
+
+            max-width: 570px;
+
+            margin:
+                28px auto 0;
+
+            color:
+                rgba(255, 255, 255, 0.82);
+
+            font-size: 15px;
+
+            line-height: 2;
+
+        }
+
+
+        .final-message strong {
+
+            color: #ffd6e7;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================
+           DIVIDER
+        ====================================== */
+
+        .final-divider {
+
+            width: 100px;
+
+            height: 2px;
+
+            margin:
+                30px auto;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #ff8fc7,
+                    transparent
+                );
+
+        }
+
+
+        /* =====================================
+           FINAL QUOTE
+        ====================================== */
+
+        .final-quote {
+
+            margin-top: 25px;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 25px;
+
+            color: #ffd6e7;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================
+           BUTTON
+        ====================================== */
+
+        .restart-button {
+
+            margin-top: 32px;
+
+            padding:
+                14px 28px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff8fc7,
+                    #ff4f9a
+                );
+
+            color: white;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(255, 79, 154, 0.25);
+
+            transition:
+                0.25s ease;
+
+        }
+
+
+        .restart-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(255, 79, 154, 0.35);
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 600px) {
+
+            .final-page {
+
+                padding:
+                    20px 14px;
+
+            }
+
+
+            .final-card {
+
+                padding:
+                    38px 20px;
+
+                border-radius: 26px;
+
+            }
+
+
+            .final-heart {
+
+                font-size: 60px;
+
+            }
+
+
+            .final-card h1 {
+
+                font-size: 50px;
+
+            }
+
+
+            .final-message {
+
+                font-size: 13px;
+
+                line-height: 1.9;
+
+            }
+
+
+            .final-quote {
+
+                font-size: 22px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         BACKGROUND MUSIC
+    ====================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="leberch-happy-birthday-581704.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support the audio element.
+
+    </audio>
+
+
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="stars"></div>
+
+
+
+    <!-- =====================================
+         FLOATING HEARTS
+    ====================================== -->
+
+    <div class="hearts">
+
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+        <span>💞</span>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FINAL PAGE
+    ====================================== -->
+
+    <main class="final-page">
+
+
+        <section class="final-card">
+
+
+            <!-- Badge -->
+
+            <div class="final-badge">
+
+                ✨ And Lastly
+
+            </div>
+
+
+
+            <!-- Heart -->
+
+            <div class="final-heart">
+
+                ❤️
+
+            </div>
+
+
+
+            <!-- Small Text -->
+
+            <p class="final-small">
+
+                And here we are...
+
+            </p>
+
+
+
+            <!-- Main Heading -->
+
+            <h1>
+
+                Our Story
+
+                <span>
+                    Doesn't End Here
+                </span>
+
+            </h1>
+
+
+
+            <!-- Divider -->
+
+            <div class="final-divider"></div>
+
+
+
+            <!-- Message -->
+
+            <p class="final-message">
+
+                Maybe this little journey started with
+                a simple moment...
+
+                <br><br>
+
+                Then came the memories,
+                the smiles,
+                the little surprises,
+                and all those tiny moments
+                that became special.
+
+                <br><br>
+
+                But the best part is that
+
+                <strong>
+                    there are still so many chapters left to write.
+                </strong>
+
+            </p>
+
+
+
+            <!-- Quote -->
+
+            <p class="final-quote">
+
+                "The best memories are still ahead of us." ❤️
+
+            </p>
+
+
+
+            <!-- Button -->
+
+            <button
+                type="button"
+                id="restartButton"
+                class="restart-button"
+            >
+
+                Start Our Story Again
+                ↻
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+
+                /* =====================================
+                   MUSIC CONTINUITY
+                ====================================== */
+
+                const music =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+
+                const MUSIC_TIME_KEY =
+                    "birthdayMusicTime";
+
+
+                /*
+                Restore the position from
+                the previous page.
+                */
+
+                const savedTime =
+                    parseFloat(
+                        localStorage.getItem(
+                            MUSIC_TIME_KEY
+                        )
+                    );
+
+
+                if (
+                    music &&
+                    Number.isFinite(savedTime) &&
+                    savedTime >= 0
+                ) {
+
+                    music.addEventListener(
+                        "loadedmetadata",
+                        () => {
+
+                            try {
+
+                                music.currentTime =
+                                    savedTime;
+
+                            }
+                            catch (error) {
+
+                                console.log(
+                                    "Could not restore music position."
+                                );
+
+                            }
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+
+
+                /* =====================================
+                   PLAY MUSIC
+                ====================================== */
+
+                if (music) {
+
+
+                    music.play()
+                        .catch(
+                            () => {}
+                        );
+
+
+                    /*
+                    If browser blocks autoplay,
+                    resume after first interaction.
+                    */
+
+                    const resumeMusic =
+                        () => {
+
+                            if (
+                                music.paused
+                            ) {
+
+                                music.play()
+                                    .catch(
+                                        () => {}
+                                    );
+
+                            }
+
+                        };
+
+
+                    document.addEventListener(
+                        "click",
+                        resumeMusic,
+                        {
+                            once: true
+                        }
+                    );
+
+
+                    document.addEventListener(
+                        "touchstart",
+                        resumeMusic,
+                        {
+                            once: true
+                        }
+                    );
+
+
+                    /*
+                    Keep saving current position.
+                    */
+
+                    music.addEventListener(
+                        "timeupdate",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+
+                    window.addEventListener(
+                        "beforeunload",
+                        () => {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =====================================
+                   RESTART STORY
+                ====================================== */
+
+                const restartButton =
+                    document.getElementById(
+                        "restartButton"
+                    );
+
+
+                restartButton.addEventListener(
+                    "click",
+                    () => {
+
+
+                        /*
+                        Save current position before
+                        going back to index.html.
+                        */
+
+                        if (music) {
+
+                            localStorage.setItem(
+                                MUSIC_TIME_KEY,
+                                music.currentTime
+                            );
+
+                        }
+
+
+                        window.location.href =
+                            "index.html";
+
+                    }
+                );
+
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
